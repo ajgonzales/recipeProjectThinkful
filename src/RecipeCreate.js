@@ -17,7 +17,7 @@ function RecipeCreate({ createRecipe }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    createRecipe(formData);
+    formData && createRecipe(formData);
     setFormData({ ...initialFormState });
   };
 
@@ -77,7 +77,7 @@ function RecipeCreate({ createRecipe }) {
               />
             </td>
             <td>
-              <button type="submit">Create</button>
+              {formData.name && (<button type="submit">Create</button>)}
             </td>
           </tr>
         </tbody>
